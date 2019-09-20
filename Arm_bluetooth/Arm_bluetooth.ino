@@ -9,11 +9,12 @@ void setup(){
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(10);
+  delay(50);
   for(i=2;i<=9;i++)
     digitalWrite(i,HIGH);
   if(Serial.available())
   {
+    ch = Serial.read();
     if(ch=='1')
       digitalWrite(wrist_open,LOW);
     else if(ch=='2')
